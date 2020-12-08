@@ -11,7 +11,7 @@ php bin/console doctrine:migration:migrate
 
 INSTALLER COMPOSER
 
-INSTALLER API: 
+INSTALLER API DANS LE PROJET: 
 
 composer require API
   
