@@ -23,7 +23,14 @@ class Article
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
-
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $quantite;
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="nom")
      */
