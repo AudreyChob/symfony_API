@@ -41,25 +41,35 @@ class Article
         return $this->id;
     }
 
-    public function getPrix(): ?string
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+    public function getQuantite(): ?int
+    {
+        return $this->quantite;
+    }
+    public function setQuantite(int $quantite): self
+    {
+        $this->quantite = $quantite;
+
+        return $this;
+    }
+    public function getPrix(): ?int
     {
         return $this->prix;
     }
 
-    public function setPrix(string $prix): self
+    public function setPrix(int $prix): self
     {
         $this->prix = $prix;
-
-        return $this;
-    }
-    public function getQuantite(): ?string
-    {
-        return $this->quantite;
-    }
-
-    public function setQuantite(string $quantite): self
-    {
-        $this->quantite = $quantite;
 
         return $this;
     }
