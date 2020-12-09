@@ -23,18 +23,26 @@ class Article
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $quantite;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $prix;
+
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="nom")
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="articles")
      */
-    private $category;
+    private $categorie;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
 
     public function getId(): ?int
     {
@@ -52,16 +60,19 @@ class Article
 
         return $this;
     }
+
     public function getQuantite(): ?int
     {
         return $this->quantite;
     }
+
     public function setQuantite(int $quantite): self
     {
         $this->quantite = $quantite;
 
         return $this;
     }
+
     public function getPrix(): ?int
     {
         return $this->prix;
@@ -74,14 +85,26 @@ class Article
         return $this;
     }
 
-    public function getCategory(): ?Category
+    public function getCategorie(): ?categorie
     {
-        return $this->category;
+        return $this->categorie;
     }
 
-    public function setCategory(?Category $category): self
+    public function setCategorie(?categorie $categorie): self
     {
-        $this->category = $category;
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
